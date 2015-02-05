@@ -170,6 +170,11 @@ body.mobile button {
 #album-art-container {
     float: left;
     width: 40%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0px;
+    line-height: 0em;
 }
 
 #album-art {
@@ -179,7 +184,6 @@ body.mobile button {
 #track-info {
     float: right;
     width: 60%;
-    max-height: 60%;
 }
 
 #container {
