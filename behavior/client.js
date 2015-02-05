@@ -213,15 +213,15 @@ MopidyClient.prototype.render_current_track = function(current_track) {
     this.show('now-playing');
     // Render the "$track from $album by $artist" text.
     var now_playing = [];
-    now_playing.push(sprintf('<span class="track-name">%s</span><br>', this.link_to_spotify(current_track)));
+    now_playing.push(sprintf('<span class="track-name">%s</span><br>', html_encode(current_track.name)));
     if (current_track.album && current_track.album.name != 'Unknown') {
 	now_playing.push('<span class="from-album">from</span>');
-	now_playing.push(sprintf('<span class="album-name">%s</span><br>', this.link_to_spotify(current_track.album)));
+	now_playing.push(sprintf('<span class="album-name">%s</span><br>', html_encode(current_track.album.name)));
     }
     if (current_track.artists) {
 	var artists = [];
 	for (var i = 0; i < current_track.artists.length; i++) {
-	    var artist_name = this.link_to_spotify(current_track.artists[i]);
+	    var artist_name = html_encode(current_track.artists[i].name);
 	    artists.push(sprintf('<span class="artist-name">%s</span>', artist_name));
 	}
 	now_playing.push('<span class="by-artist">by</span>');
@@ -351,7 +351,7 @@ MopidyClient.prototype.show = function(element_id) {
 };
 
 // MopidyClient.link_to_spotify() - Generate hyper links to the Spotify web player. {{{2
-
+// TODO: this is no longer needed, should be deprecated. 
 MopidyClient.prototype.link_to_spotify = function (object) {
     var result = html_encode(object.name);
     if (object.uri) {

@@ -78,25 +78,16 @@
 
 /* Track metadata. {{{2 */
 
-#now-playing a:link,
-#now-playing a:visited {
-  color: white;
-  text-decoration: none;
-}
-
-#now-playing a:hover,
-#now-playing a:active {
-  text-decoration: underline;
-}
-
 #now-playing .track-name {
   font-size: 1.3em;
   font-weight: bold;
+  color: white;
 }
 
 #now-playing .album-name,
 #now-playing .artist-name {
   font-size: 1.2em;
+  color: white;
 }
 
 #now-playing .from-album,
