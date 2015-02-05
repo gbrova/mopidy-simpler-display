@@ -1,0 +1,73 @@
+<!--
+
+ Simple Mopidy web client.
+
+ Author: Peter Odding <peter@peterodding.com>
+ Last Change: October 19, 2014
+ URL: https://github.com/xolox/mopidy-simple-webclient
+
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>George's Music player</title>
+    <meta charset="utf-8">
+    <!-- jQuery from the Google CDN. -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <!-- Bootstrap CSS & JS from the Bootstrap CDN. -->
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <!-- The Mopidy client behavior and styling. -->
+    <link href="styles/client.css" rel="stylesheet">
+    <!-- <script src="behavior/client.js"></script> -->
+    <script src="behavior/sprintf.js"></script> 
+  </head>
+  <body>
+
+<img id="background" src="" />
+
+<div class="foreground">
+    <!-- Server selection interface. -->
+    <div id="select-server" class="hidden-by-default dialog">
+      <p>To get started please enter the address of your <a href="https://www.mopidy.com/">Mopidy server</a> below and click on the connect button. The default should be fine in most circumstances.</p>
+      <form action="" method="post">
+        <p><label>Server URL: <input type="text" id="server-url" value=""></label></p>
+        <p><button class="btn btn-primary" id="connect">Connect to server ..</button></p>
+        <p id="connect-error"></p>
+      </form>
+    </div>
+    <!-- Play list selection interface. -->
+    <div id="select-playlist" class="hidden-by-default dialog">
+      <p>Select a playlist below to start playing the tracks in that playlist.
+         Alternatively you can <a href="#" id="cancel-playlist-selection-button">return
+         without selecting a playlist</a>.</p>
+      <p id="loading-playlists-spinner"><img src="images/spinner.gif" class="spinner"></p>
+      <p id="available-playlists"></p>
+      <div id="no-playlists-message" class="error-message hidden-by-default">
+        <p><strong>You don't have any playlists!</strong></p>
+        <p>That's a bit of a problem because this Mopidy client expects to get
+           started by loading a playlist into the play queue!</p>
+        <p>Please use another Mopidy client to create a playlist or create a
+           playlist in Spotify (and make sure the Spotify plug-in for Mopidy is
+           enabled).</p>
+      </div>
+    </div>
+    <!-- Now playing interface. -->
+    <div id="container">
+	  <div id="now-playing" class="hidden-by-default">
+	    <div id="track-info"></div>
+	    <div id="album-art-container">
+	      <img id="album-art" src=""></img>
+	    </div>
+	  </div>
+    </div>
+    <p id="runtime-error" class="error-message hidden-by-default"></p>
+</div>
+  </body>
+    <script src="behavior/caman.full.min.js"></script>
+    <script type="text/javascript" src="behavior/lastfm.api.md5.js"></script>
+    <script type="text/javascript" src="behavior/lastfm.api.js"></script>
+    <script type="text/javascript" src="behavior/lastfm.api.cache.js"></script>
+    <script type="text/javascript" src="behavior/images.js"></script>
+    <script src="behavior/client.js"></script>
+</html>

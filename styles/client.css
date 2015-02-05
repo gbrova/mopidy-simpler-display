@@ -1,0 +1,199 @@
+/* Simple Mopidy web client.
+ *
+ * Author: Peter Odding <peter@peterodding.com>
+ * Last Change: October 19, 2014
+ * URL: https://github.com/xolox/mopidy-simple-webclient
+ */
+
+/* Global styles. {{{1 */
+
+#background {
+    position: fixed;
+    top: -5%;
+    left: -5%;
+    z-index: -1;
+/*    width: 100%;
+    height: 100%;*/
+    min-width: 110%;
+    min-height: 110%;
+    filter: blur(25px) brightness(0.5);
+    -webkit-filter: blur(20px) brightness(0.5);
+}
+
+.foreground {
+/*  margin: 1em;*/
+  font-size: 4em;
+  line-height: 1.75em;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.spinner {
+  display: block;
+  margin: 2em auto;
+  width: 2em;
+  height: 2em;
+}
+
+.hidden-by-default {
+  display: none;
+}
+
+.dialog {
+  margin: 0 auto;
+  min-width: 60%;
+  max-width: 25em;
+  text-align: justify;
+}
+
+/* Server selection interface. {{{1 */
+
+#select-server input[type=text] {
+  display: block;
+  width: 20em;
+}
+
+/* Play list selection interface. {{{1 */
+
+#available-playlists button {
+  display: block;
+  margin: 0.5em auto;
+}
+
+.error-message {
+  margin: 1em;
+  padding: 0.5em;
+  border: 0.1em solid #ffaaff;
+  background-color: #ffeeff;
+  border-radius: 0.25em;
+}
+
+/* Now playing interface. {{{1 */
+
+#now-playing {
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Track metadata. {{{2 */
+
+#now-playing a:link,
+#now-playing a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+#now-playing a:hover,
+#now-playing a:active {
+  text-decoration: underline;
+}
+
+#now-playing .track-name {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+#now-playing .album-name,
+#now-playing .artist-name {
+  font-size: 1.2em;
+}
+
+#now-playing .from-album,
+#now-playing .by-artist {
+  font-style: italic;
+  opacity: 0.25;
+  color: white
+}
+
+/* Playback control. {{{2 */
+
+#now-playing #controls {
+  text-align: center;
+}
+
+#now-playing #controls img {
+  width: 2.5em;
+  height: 2.5em;
+}
+
+#now-playing #controls button img {
+  width: 2em;
+  height: 2em;
+}
+
+.dimmed-image-button {
+  opacity: 0.5;
+}
+
+.hover-image-button:hover {
+  opacity: 1;
+}
+
+#playback-controls, #volume-control, #misc-controls {
+  margin: 1em auto;
+}
+
+#misc-controls button {
+  margin: 0.25em;
+}
+
+/* Volume control. {{{2 */
+
+#volume-control {
+  width: 16em;
+}
+
+#volume-control .step {
+  display: block;
+  margin: 0.3em;
+  width: 2em;
+  height: 2em;
+  float: left;
+  background-color: #eee;
+  border-radius: 1em;
+}
+
+#volume-control .filled {
+  background-color: LightSteelBlue;
+}
+
+/* Mobile tweaks. {{{1 */
+
+body.mobile {
+  font-size: 3em;
+  line-height: 1.5em;
+}
+
+body.mobile .dimmed-image-button {
+  opacity: 1;
+}
+
+body.mobile button {
+  padding: 0.5em 0.75em;
+  font-size: 1em;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+#album-art-container {
+    float: left;
+    width: 40%;
+}
+
+#album-art {
+    width: 60%;
+}
+
+#track-info {
+    float: right;
+    width: 60%;
+    max-height: 60%;
+}
+
+#container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0px 5%
+}
