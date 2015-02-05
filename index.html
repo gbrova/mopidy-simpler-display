@@ -24,7 +24,7 @@
   </head>
   <body>
 
-<img id="background" src="" />
+<img id="background" src="images/default_cover.png" />
 
 <div class="foreground">
     <!-- Server selection interface. -->
@@ -37,23 +37,13 @@
       </form>
     </div>
     <!-- Play list selection interface. -->
-    <div id="select-playlist" class="hidden-by-default dialog">
-      <p>Select a playlist below to start playing the tracks in that playlist.
-         Alternatively you can <a href="#" id="cancel-playlist-selection-button">return
-         without selecting a playlist</a>.</p>
-      <p id="loading-playlists-spinner"><img src="images/spinner.gif" class="spinner"></p>
-      <p id="available-playlists"></p>
-      <div id="no-playlists-message" class="error-message hidden-by-default">
-        <p><strong>You don't have any playlists!</strong></p>
-        <p>That's a bit of a problem because this Mopidy client expects to get
-           started by loading a playlist into the play queue!</p>
-        <p>Please use another Mopidy client to create a playlist or create a
-           playlist in Spotify (and make sure the Spotify plug-in for Mopidy is
-           enabled).</p>
-      </div>
+    <div class="foreground">
+    <div id="select-playlist" class="hidden-by-default">
+      Nothing is currently playing
+    </div>
     </div>
     <!-- Now playing interface. -->
-    <div id="container">
+    <div class="container">
 	  <div id="now-playing" class="hidden-by-default">
 	    <div class="foreground">
 	    <div id="album-art-container">

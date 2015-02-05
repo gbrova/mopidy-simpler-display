@@ -53,6 +53,16 @@
   width: 20em;
 }
 
+#select-playlist {
+  text-align: center;
+  font-size: 0.3em;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 /* Play list selection interface. {{{1 */
 
 #available-playlists button {
@@ -185,7 +195,7 @@ body.mobile button {
     width: 60%;
 }
 
-#container {
+.container {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
