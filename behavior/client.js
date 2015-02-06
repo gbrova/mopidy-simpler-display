@@ -225,7 +225,8 @@ MopidyClient.prototype.render_current_track = function(current_track) {
 	    artists.push(sprintf('<span class="artist-name">%s</span>', artist_name));
 	}
 	now_playing.push('<span class="by-artist">by</span>');
-	now_playing.push(sprintf('%s', artists.join(', ')));
+	var pretty_comma = '<span class="by-artist">, </span>';
+	now_playing.push(sprintf('%s', artists.join(pretty_comma)));
     }
     if (lastAlbumUri != current_track.album.uri) {
 	lastAlbumUri = current_track.album.uri;
