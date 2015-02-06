@@ -124,7 +124,7 @@ MopidyClient.prototype.show_now_playing = function() {
 var gui_refresh_interval = null;
 
 MopidyClient.prototype.refresh_gui = function() {
-    if (document.location.hash == '#now-playing') {
+    if (document.location.hash == '#now-playing' || 1) {
 	this.call('core.playback.get_current_track', function(current_track) {
 	    if (!current_track) {
 		this.logger.info("Nothing is currently playing, starting play list selection ..");
@@ -149,6 +149,7 @@ MopidyClient.prototype.select_playlist = function() {
     $('#no-playlists-message').hide();
     this.show('select-playlist');
     $('#loading-playlists-spinner').show();
+    // TODO: this is irrelevant, remove it. (the this.call() block)
     // Fetch the available play lists from the server.
     this.call('core.playlists.get_playlists', function(playlists) {
 	this.logger.info("Found %i play lists.", playlists.length);
@@ -210,6 +211,7 @@ MopidyClient.prototype.load_playlist = function(name) {
 MopidyClient.prototype.render_current_track = function(current_track) {
     this.logger.info("Rendering track information ..");
     // Show the now playing interface.
+    
     this.show('now-playing');
     // Render the "$track from $album by $artist" text.
     var now_playing = [];
